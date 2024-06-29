@@ -22,12 +22,7 @@ public class Investment {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
-    @Column(name = "investment_id")
     private Long investmentId;
-
-    @ManyToOne
-    @JoinColumn(name = "prospect", referencedColumnName = "prospectId")
-    private Prospect prospect;
 
     private String invstCategory; //share,bonds,real estate,busniess ventures
 
@@ -50,5 +45,9 @@ public class Investment {
     private String riskCategory;
 
     private String invstmntStatus; //can be Active, Cold(no invst in 2 quaters), Inactive, Dropped
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "prospect_id")
+    private Prospect ownerProspect;
 
 }

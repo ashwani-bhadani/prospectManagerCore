@@ -51,6 +51,7 @@ public class ProspectServiceImpl implements ProspectService {
                     recycleProspect.getCurrentDateTime(),
                     recycleProspect.getOnboardMode()
             );
+//            TODO: ensure all investments belonging to prospect are deleted
             prospectRecyclerRepository.save(movedProspect);
             return "Data deleted successfully";
         } else {

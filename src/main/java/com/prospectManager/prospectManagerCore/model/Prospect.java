@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -22,7 +23,6 @@ public class Prospect {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
-    @Column(name = "prospect_id")
     private Long prospectId;
 
     private String titleName;
@@ -37,6 +37,6 @@ public class Prospect {
 
     private LocalDateTime nextMeetingDate;
 
-    @OneToMany(mappedBy = "prospect", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<Investment> investments = new HashSet<>();       //primary key of the Prospect should be inserted into Investment
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "ownerProspect", cascade = CascadeType.ALL)
+    private List<Investment> investmentList;
 }

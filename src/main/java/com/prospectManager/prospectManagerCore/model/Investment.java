@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Any prospect when initialAmt invested turns to an investment
@@ -21,9 +22,12 @@ public class Investment {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
+    @Column(name = "investment_id")
     private Long investmentId;
 
-    private String prospectId;
+    @ManyToOne
+    @JoinColumn(name = "prospect", referencedColumnName = "prospectId")
+    private Prospect prospect;
 
     private String invstCategory; //share,bonds,real estate,busniess ventures
 

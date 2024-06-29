@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Prospective is any investment category to make profits
@@ -20,6 +22,7 @@ public class Prospect {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
+    @Column(name = "prospect_id")
     private Long prospectId;
 
     private String titleName;
@@ -33,4 +36,7 @@ public class Prospect {
     private String onboardMode;
 
     private LocalDateTime nextMeetingDate;
+
+    @OneToMany(mappedBy = "prospect", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Investment> investments = new HashSet<>();       //primary key of the Prospect should be inserted into Investment
 }

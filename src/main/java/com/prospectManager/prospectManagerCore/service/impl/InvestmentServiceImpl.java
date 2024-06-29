@@ -26,16 +26,21 @@ public class InvestmentServiceImpl implements InvestmentService {
 
     @Override
     public String updateInvestment(Investment investment) {
-        return "";
+        if (investmentRepository.existsById(investment.getInvestmentId())) {
+            investmentRepository.save(investment);
+            return "Data updated successfully!";
+        }
+
+        return "Error in data update!";
     }
 
     @Override
     public Investment fetchInvestmentById(Long investmentId) {
-        return null;
+        return investmentRepository.findById(investmentId).get();
     }
 
     @Override
     public Investment createInvestment(Investment investment) {
-        return null;
+        return investmentRepository.save(investment);
     }
 }

@@ -2,6 +2,7 @@ package com.prospectManager.prospectManagerCore.controller;
 
 import com.prospectManager.prospectManagerCore.model.Prospect;
 import com.prospectManager.prospectManagerCore.service.ProspectService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 @RequestMapping("/prospect")
 public class ProspectController {
 
+    @Autowired
     private ProspectService prospectService;
 
     @GetMapping

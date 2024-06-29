@@ -17,10 +17,10 @@ public class InvestmentController {
         return investmentService.fetchAllInvestments();
     }
 
-    @GetMapping("/prospectId/{prospectId}")
-    public List<Investment> getAllInvestmentsForProspect(@PathVariable Long prospectId) {
-        return investmentService.fetchInvestmentByProspectId(prospectId);
-    }
+//    @GetMapping("/prospectId/{prospectId}")
+//    public List<Investment> getAllInvestmentsForProspect(@PathVariable Long prospectId) {
+//        return investmentService.fetchInvestmentByProspectId(prospectId);
+//    }
 
     @PostMapping
     public Investment newInvestmentForProspect(@RequestBody Investment investment) {

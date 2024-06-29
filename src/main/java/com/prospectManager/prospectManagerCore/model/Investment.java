@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigInteger;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * Any prospect when initialAmt invested turns to an investment
@@ -36,11 +37,11 @@ public class Investment {
 
     private BigInteger lastDepositAmt;
 
-    private LocalDateTime lastDepositDate; //ISO 8601 date time
+    private Date lastDepositDate; //ISO 8601 date time
 
     private BigInteger currentHoldingAmt;
 
-    private Performance performance;
+    private Double performance;
 
     private String riskCategory;
 

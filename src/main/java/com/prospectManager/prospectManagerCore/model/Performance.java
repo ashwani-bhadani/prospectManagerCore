@@ -5,7 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * Acts as a log of quaterly performance
@@ -21,17 +22,17 @@ public class Performance {
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long slNo;
 
-    private Long invstId;
+    private Long investmentId;
 
-    private String totalInvestedAmt;
+    private BigDecimal totalInvestedAmt;
 
     private Double cummulativePerf; //cummulative performance
 
     private Double lastQuaterPerf;
 
-    private LocalDateTime lastUpdateDate; //most recent update timeStamp
+    private Date lastUpdateDate; //most recent update timeStamp
 
-    private LocalDateTime nextMeetingDate;
+    private Date nextMeetingDate;
 
     private String invstmntCurrency;
 }

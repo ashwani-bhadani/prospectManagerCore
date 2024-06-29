@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -25,7 +25,7 @@ public class ProspectRecycleBin {
 
     private String estimatedCurrentValue;
 
-    private LocalDateTime currentDateTime; //ISO 8601 date time
+    private Date currentDateTime; //ISO 8601 date time
 
     private String onboardMode;
 

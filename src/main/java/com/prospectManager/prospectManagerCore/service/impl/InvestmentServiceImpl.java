@@ -19,10 +19,10 @@ public class InvestmentServiceImpl implements InvestmentService {
         return investmentRepository.findAll();
     }
 
-    @Override
-    public List<Investment> fetchInvestmentByProspectId(Long prospectId) {
-        return investmentRepository.findByProspect(prospectId);
-    }
+//    @Override
+//    public List<Investment> fetchInvestmentByProspectId(Long prospectId) {
+//        return investmentRepository.findByProspect(prospectId);
+//    }
 
     @Override
     public String updateInvestment(Investment investment) {

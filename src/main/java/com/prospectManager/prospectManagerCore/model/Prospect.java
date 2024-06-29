@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * Prospective is any investment category to make profits
@@ -27,7 +28,7 @@ public class Prospect {
 
     private String estimatedCurrentValue;
 
-    private LocalDateTime currentDateTime; //ISO 8601 date time : becomes lastMeetingDate
+    private Date currentDateTime; //ISO 8601 date time : becomes lastMeetingDate
 
     private String onboardMode;
 

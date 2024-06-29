@@ -8,7 +8,7 @@ public interface InvestmentService {
 
     public List<Investment> fetchAllInvestments();
 
-    public List<Investment> fetchInvestmentByProspectId(Long prospectId);
+//    public List<Investment> fetchInvestmentByProspectId(Long prospectId);
 
     public String updateInvestment(Investment investment);
 

@@ -11,6 +11,7 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity(name = "users")
 public class User {
 
@@ -18,17 +19,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long userId;
 
-    String userName;
+    private String userName;
 
-    String email;
+    private String fullName;
 
-    String mobile;
+    private String email;
 
-    String FirstName;
+    private String mobile;
 
-    String MiddleName;
-
-    String LastName;
-
-    Integer age;
+    private Integer age;
 }
